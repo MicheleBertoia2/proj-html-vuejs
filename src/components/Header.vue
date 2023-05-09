@@ -1,11 +1,14 @@
 
 <script>
 import functions from "../data/functions.js";
+import {headerMenu} from "../data/db-menus.js"
 export default {
   name: "Header",
   data(){
     return{
-      functions
+      functions,
+      headerMenu,
+      socialIcons: ["fa-twitter","fa-facebook-f","fa-instagram","fa-linkedin"],
     }
   }
 }
@@ -15,10 +18,20 @@ export default {
   <div class="mb-header">
     <div class="mb-container">
       <nav class=" d-flex justify-content-between align-items-center py-3">
-        <img :src="functions.getImage(`../assets/img/dark-logo.png`)" alt="logo">
-        <ul class="mb-menu ">
 
+        <img :src="functions.getImage(`../assets/img/dark-logo.png`)" alt="logo">
+
+        <ul class="mb-menu d-flex">
+          <li v-for="(link, index) in headerMenu" :key="index">
+            <a :href="link.href">{{ link.title }}</a>
+          </li>
         </ul>
+
+        <div class="socials">
+          <a href="#" v-for="(n,index) in socialIcons" :key="index">
+            <i class="fa-brands" :class="socialIcons[index]"></i>
+          </a>
+        </div>
       </nav>
     </div>
   </div>
@@ -33,8 +46,9 @@ export default {
       img{
         height: 30px;
       }
-      i{
-        font-size: 50px;
+      .mb-menu{
+        width: 60%;
+        position: relative;
       }
     }
   }
