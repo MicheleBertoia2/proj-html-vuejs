@@ -14,6 +14,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../scss/vars" as *;
+
   .mb-jumbo{
     background-color: lighten($jumbo-color,32%);
     background-image: url("../assets/img/background-pattern-wavify.png");

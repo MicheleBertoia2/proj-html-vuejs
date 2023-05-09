@@ -16,19 +16,32 @@ export default {
 
 <template>
   <div class="mb-header">
-    <div class="mb-container">
-      <nav class=" d-flex justify-content-between align-items-center py-3">
+    <div class="mb-container h-100">
+      <nav class=" d-flex justify-content-between align-items-center h-100">
 
         <img :src="functions.getImage(`../assets/img/dark-logo.png`)" alt="logo">
 
-        <ul class="mb-menu d-flex">
+        <ul class="mb-menu d-flex justify-content-between align-items-center mb-0">
+
           <li v-for="(link, index) in headerMenu" :key="index">
-            <a :href="link.href">{{ link.title }}</a>
+            <a :href="link.href" class="main-link" >{{ link.title }}
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul class="mb-drop-down position-absolute" >
+              <li v-for="(sublink, index) in link.sublinks" :key="index" >
+                <a :href="sublink.href"> {{ sublink.title }} </a>
+              </li>              
+            </ul>
           </li>
+
         </ul>
 
-        <div class="socials">
-          <a href="#" v-for="(n,index) in socialIcons" :key="index">
+        <div class="socials text-end mt-2">
+          <a
+            class="ms-4"
+            href="#"
+            v-for="(n,index) in socialIcons"
+            :key="index">
             <i class="fa-brands" :class="socialIcons[index]"></i>
           </a>
         </div>
@@ -38,18 +51,54 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../scss/vars" as *;
   .mb-header{
     background-color: lighten(#8c89a2,32%);
     background-image: url("../assets/img/background-pattern-wavify.png");
     height: 80px;
     nav{
       img{
-        height: 30px;
+        height: 26px;
       }
       .mb-menu{
-        width: 60%;
-        position: relative;
+        width: 50%;
+        li{
+          position: relative;
+          &:hover{
+            .mb-drop-down{
+              top: 15px;
+              opacity: 1;
+            }
+          }
+          .main-link{
+          i{
+            font-size: 10px;
+          }
+          &:hover{
+            color: $secondary-text-color!important;
+            
+          }          
+         }
+          .mb-drop-down{
+            top: 5px;
+            left: 0;
+            opacity: 0;
+            transition: all 1s;
+            
+          }
+        }
+        
+      }
+      .socials{
+        i{
+          font-size: 20px;
+          color: #333333;
+        }
       }
     }
   }
+ 
+
+    //transition
+   
 </style>
