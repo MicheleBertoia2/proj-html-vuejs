@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/vars" as *;
   .mb-header{
-    background-color: lighten(#8c89a2,32%);
+    background-color: lighten(#8c89a2,38%);
     background-image: url("../assets/img/background-pattern-wavify.png");
     height: 80px;
     nav{
@@ -66,8 +66,7 @@ export default {
           position: relative;
           &:hover{
             .mb-drop-down{
-              top: 15px;
-              opacity: 1;
+              display: block;
             }
           }
           .main-link{
@@ -80,11 +79,9 @@ export default {
           }          
          }
           .mb-drop-down{
-            top: 5px;
+            top: 15px;
             left: 0;
-            opacity: 0;
-            transition: all 1s;
-            
+            display: none;
           }
         }
         
