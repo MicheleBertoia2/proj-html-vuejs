@@ -1,5 +1,9 @@
 @use "./vars.scss" as *;
 
+body{
+  font-family: "Roboto", sans-serif;
+}
+
 img{
   height: 100%;
   object-fit: cover;
@@ -29,7 +33,7 @@ section{
 .mb-button{
   background-color: $secondary-text-color;
   color: white;
-  padding: 10px 40px;
+  padding: 20px 60px;
   font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
@@ -37,5 +41,8 @@ section{
   &:hover{
     color: white;
     background-color: $primary-text-color;
+  }
+  i{
+    margin-left: 10px;
   }
 }
