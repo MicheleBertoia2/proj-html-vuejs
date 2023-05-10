@@ -21,7 +21,7 @@ export default {
 
     <div class="mb-container text-center">
       <h5 class="text-uppercase">begin your journey at maxcoach</h5>
-      <h2 class="text-capitalize mb-5">latest <span>online courses</span></h2>
+      <h2 class="text-capitalize mb-5">latest <span class="greenify">online courses</span></h2>
 
       <div class="row mb-5">
         <CourseCard v-for="(course,index) in courses" :key="index" :course="course" />
