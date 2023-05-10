@@ -40,7 +40,7 @@ export default {
 
   .mb-jumbo{
     min-height: 500px; //debug
-    background-color: lighten($jumbo-color,38%);
+    background-color: lighten($jumbo-color,32%);
     background-image: url("../assets/img/background-pattern-wavify.png");
   }
 </style>

@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/vars" as *;
   .mb-header{
-    background-color: lighten(#8c89a2,38%);
+    background-color: lighten(#8c89a2,32%);
     background-image: url("../assets/img/background-pattern-wavify.png");
     height: 80px;
     nav{
