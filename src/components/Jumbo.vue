@@ -15,7 +15,7 @@ export default {
 <template>
 
   <div class="mb-jumbo pt-5">
-    <div class="container">
+    <div class="mb-container">
       <div class="row">
         
         <div class="col-6">
