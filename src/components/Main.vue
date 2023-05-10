@@ -5,6 +5,7 @@ import Blog from './partials/Blog.vue';
 import Books from './partials/Books.vue';
 import Courses from './partials/Courses.vue';
 import Stories from './partials/Stories.vue';
+import Clients from './partials/Clients.vue';
 import functions from '../data/functions.js';
 export default {
   name: "Main",
@@ -13,7 +14,8 @@ export default {
     Blog,
     Books,
     Courses,
-    Stories
+    Stories,
+    Clients
   },
   data(){
     return{
@@ -61,6 +63,7 @@ export default {
   <About />
   <Courses />
   <Books />
+  <Clients />
   <Stories />
   <Blog />
 </template>
