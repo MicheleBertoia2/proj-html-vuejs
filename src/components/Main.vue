@@ -44,14 +44,20 @@ export default {
 <template>
   <div class="statistics mb-container d-flex justify-content-between ">
 
-    <div class="data d-flex position-relative" v-for="(statistic,index) in statistics" :key="index">
+    <div class="data d-flex position-relative align-items-center" v-for="(statistic,index) in statistics" :key="index">
       <img :src="functions.getImage(`../assets/img/background-pattern-grid-line-06.png`)" alt="grid-line" >
-      <div class="text text-center ms-5 my-3">
+      <div class="text text-center ms-5">
         <h3>{{ statistic.data }}</h3>
         <span>{{ statistic.title }}</span>
       </div>
     </div>
+    
+    <div class="data d-flex position-relative" >
+      <img :src="functions.getImage(`../assets/img/background-pattern-grid-line-06.png`)" alt="grid-line" >      
+    </div>
+
   </div>
+
   <About />
   <Courses />
   <Books />
@@ -62,16 +68,24 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/vars" as *;
 .statistics{
-  margin: 100px auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
   .data{
+    height: 125px;
+    &:last-child{
+      img{
+        width: 270px;
+      }
+    }
     img{
       position: absolute;
       top: 0;
       left: 0;
-      // width: 30px;
+      width: 100%;
+      object-fit: contain;
+      transform: scale(1.2);
     }
     .text{
-
       h3{
         color: $secondary-text-color;
         font-weight: bolder;
