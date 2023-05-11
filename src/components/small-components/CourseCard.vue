@@ -39,7 +39,6 @@ export default {
 @use "../../scss/vars" as *;
   .mb-card{
     border-radius: 10px ;
-    // overflow: hidden;
     &:hover{
       img{
         transform: scale(1.2);

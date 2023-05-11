@@ -35,12 +35,12 @@ export default {
 <template>
   <section id="books">
 
-    <div class="mb-container">
+    <div class="mb-container pb-5">
 
       <div class="row">
         <div class="col-4">
-          <h5 class="text-uppercase mb-4">book store online</h5>
-          <h2 class="text-capitalize mb-5">Be Alpha With <span class="greenify">Wingman's Book</span></h2>
+          <h5 class="text-uppercase mb-4 fs-6">book store online</h5>
+          <h2 class="text-capitalize mb-5 blufy stylish fs-1">Be Alpha With <span class="greenify">Wingman's Book</span></h2>
           <ul class="mb-5">
             <li>Help you understand yourself better</li>
             <li>Revealing mature tips</li>

@@ -17,8 +17,9 @@ export default {
 <template>
 
 <div class="col-3 mb-card text-start mb-3">
-
-<img :src="functions.getImage(`.././assets/img/motivation-blog-${blog.img}-480x325.jpg`)" :alt="blog.img">
+  <div class="img-box overflow-hidden">
+    <img :src="functions.getImage(`.././assets/img/motivation-blog-${blog.img}-480x325.jpg`)" :alt="blog.img">
+  </div>
 <div class="text">
   <h6><i class="fa-regular fa-file-lines"></i> {{ blog.date }}</h6>
   <h3 class="fw-semibold fs-5 mb-5 text-capitalize">{{ blog.title }}</h3>
@@ -37,10 +38,20 @@ export default {
   .mb-card{
     border-radius: 10px ;
     overflow: hidden;
-    img{
-      border-radius: 10px ;
+    &:hover{
+      img{
+        transform: scale(1.2);
+        transition: transform 1s ease;
+      }
+    }
+    .img-box{
+      border-radius: 10px;
       width: 100%;
       height: 230px;
+      img{
+      width: 100%;
+      height: 100%;
+     }
     }
     .text{
       padding: 30px;
