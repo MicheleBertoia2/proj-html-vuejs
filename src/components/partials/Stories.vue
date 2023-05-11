@@ -47,6 +47,8 @@ export default {
 @use "../../scss/vars" as *;
   .stories-container{
     height: 700px;
+    width: 100%;
+    overflow: hidden;
     background-color: lighten(#8c89a2,32%);
     background-image: url("../../assets/img/background-pattern-wavify.png");
     .row{

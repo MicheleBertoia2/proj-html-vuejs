@@ -17,7 +17,7 @@ export default {
 
 <template>
   <section id="blog">
-    <div class="mb-container">
+    <div class="mb-container text-center">
       <h4>blog updated</h4> 
       <!-- RICORDARSI DI UNIFICARE GLI STILI DI TUTTI I TITOLI DELLE SECTION -->
       <h2>Interesting <span class="greenify">articles updated</span> daily</h2>
@@ -27,6 +27,8 @@ export default {
         <BlogCard v-for="(blog, index) in blogs" :key="index" :blog="blog" />
 
       </div>
+      
+      <a href="#" class="greenify text-uppercase text-decoration-underline link-offset-3">view all posts</a>
 
     </div>
   </section>

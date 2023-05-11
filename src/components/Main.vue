@@ -83,7 +83,7 @@ export default {
     img{
       position: absolute;
       top: 0;
-      left: 0;
+      left: 26px;
       width: 100%;
       object-fit: contain;
       transform: scale(1.2);

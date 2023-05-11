@@ -1,4 +1,4 @@
-export {headerMenu}
+export {headerMenu,footerMenu}
 
 const headerMenu = [
   {
@@ -289,4 +289,62 @@ const headerMenu = [
       },
     ]
   }
+]
+
+const footerMenu = [
+  {
+    title: "Explore",
+    sublinks:[
+      {
+        title: "Start here",
+        href: "#",
+      },
+      {
+        title: "Blog",
+        href: "#",
+      },
+      {
+        title: "About us",
+        href: "#",
+      },      
+    ]
+  },
+  {
+    title: "",
+    sublinks:[
+      {
+        title: "Success story",
+        href: "#",
+      },
+      {
+        title: "Courses",
+        href: "#",
+      },
+      {
+        title: "Contact us",
+        href: "#",
+      },      
+    ]
+  },
+  {
+    title: "Information",
+    sublinks:[
+      {
+        title: "Membership",
+        href: "#",
+      },
+      {
+        title: "Purchase guide",
+        href: "#",
+      },
+      {
+        title: "Privacy policy",
+        href: "#",
+      },      
+      {
+        title: "Terms of service",
+        href: "#",
+      },      
+    ]
+  },
 ]

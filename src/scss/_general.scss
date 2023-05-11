@@ -20,7 +20,7 @@ a{
   font-weight: 500;
 }
 
-section{
+section:not(:last-child){
   margin-bottom: 100px;
 }
 
@@ -28,6 +28,7 @@ section{
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .mb-button{
