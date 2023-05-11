@@ -18,8 +18,10 @@ export default {
 <template>
   <section id="blog">
     <div class="mb-container text-center">
-      <h4 class="text-uppercase section-title">blog updated</h4> 
-      <h2>Interesting <span class="greenify">articles updated</span> daily</h2>
+      <div class="text-start">
+        <h4 class="text-uppercase section-title">blog updated</h4> 
+        <h2 class="my-5 stylish fs-1">Interesting <span class="greenify">articles updated</span> daily</h2>
+      </div>
 
       <div class="row">
 
