@@ -17,7 +17,7 @@ export default {
 
 <template>
 
-  <section id="courses">
+  <section id="courses" class="overflow-hidden">
 
     <div class=" text-center pb-5">
       <h4 class="text-uppercase section-title grayfy fs-5">begin your journey at maxcoach</h4>

@@ -1,7 +1,31 @@
 
 <script>
+import functions from '../../data/functions';
+import stories from "../../data/db-stories";
 export default {
-  name: "Stories"
+  name: "Stories",
+  data(){
+    return{
+      functions,
+      stories,
+      activeComment: 0
+    }
+  },
+  methods:{
+    nextPrev(value){
+      if(value==="next"){
+        this.activeComment++
+        if(this.activeComment > this.stories.length -1){
+          this.activeComment = 0
+        }
+      }else if(value==="prev"){
+        this.activeComment--
+        if(this.activeComment < 0){
+          this.activeComment = this.stories.length -1
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -15,20 +39,24 @@ export default {
         <div class="col-6 text-center">
           <h4 class="text-uppercase section-title greenify">real stories</h4>
 
-          <div class="text-container mx-auto d-flex justify-content-center align-items-center">
-            <h2 class="fs-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit velit vitae labore, optio repudiandae voluptate quisquam ex odit, amet, eaque provident beatae obcaecati cum inventore? Enim hic eum quibusdam in.</h2>
-          </div>
+          <div class="comment position-absolute" :class="{active : activeComment === index}" v-for="(story, index) in stories" :key="index">
 
-          <div class="user text-center mx-auto">
-            <img src="../../assets/img/testimonial-avata-01.jpg" alt="nome">
-            <h3 class="text-capitalize mb-2 fs-4">nome cognome</h3>
-            <span>/profession</span>
+            <div class="text-container mx-auto d-flex justify-content-center align-items-center">
+              <h2 class="fs-4">{{ story.comment }}</h2>
+            </div>
+
+            <div class="user text-center mx-auto">
+              <img :src="functions.getImage(`.././assets/img/testimonial-avata-${story.image}.jpg`)" alt="nome">
+              <h3 class="text-capitalize mb-2 fs-4">{{story.name}}</h3>
+              <span class="grayfy">/{{story.profession}}</span>
+            </div>  
+
           </div>
 
           <div class="controls position-absolute d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-sort-up prev"></i>
-            <span class="fs-4">1/4</span>
-            <i class="fa-solid fa-sort-down next"></i>
+            <i class="fa-solid fa-sort-up prev" @click="nextPrev('prev')"></i>
+            <span class="fs-4">{{activeComment +1}}/4</span>
+            <i class="fa-solid fa-sort-down next"  @click="nextPrev('next')"></i>
           </div>
           
         </div>
@@ -53,18 +81,36 @@ export default {
     background-image: url("../../assets/img/background-pattern-wavify.png");
     .row{
       padding: 100px 0;
-      
-    .text-container{
-      width: 70%;
-      margin: 50px 0 70px 0;
+      h5{
+      color: $secondary-text-color;
+      }
+      .comment{
+        opacity: 0;
+        top: 110px;
+        left: 65px;
+        width: 40%;
+        transition: opacity 1s ease;
+      .text-container{
+        margin: 50px 0 ;
+        h2{
+          font-size: 22px;
+          line-height: 2.2rem;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
       }
       .user{
         img{
           border-radius: 50%;
           height:90px;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
       }
+      }
+
+      .comment.active{
+        opacity: 1;
+      }
+    
       .testimonial{
         img{
           width: 100%;
