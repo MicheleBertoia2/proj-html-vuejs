@@ -33,12 +33,18 @@ export default {
             <a :href="link.href" class="main-link" >{{ link.title }}
               <i class="fa-solid fa-chevron-down"></i>
             </a>
-            <div class="bigdrop mb-drop-down position-absolute" v-if="link.isBig">
-              <ul>
-                <li v-for="(sublink, index) in link.sublinks" :key="index" >
-                  <a :href="sublink.href"> {{ sublink.title }} </a>
-                </li>              
-              </ul>
+            <div class="bigdrop mb-drop-down position-absolute d-flex" v-if="link.isBig">
+                <ul class=" h-100 row d-flex flex-column mb-row">
+                  <li v-for="(sublink, index) in link.sublinks" :key="index" class="col-6">
+                    <a :href="sublink.href"> {{ sublink.title }} 
+                        <span v-if="sublink.isHot" class="hot">HOT</span>
+                        <span v-if="sublink.isNew" class="new">NEW</span>
+                    </a>                    
+                  </li>              
+                </ul>
+                <div class="image-box d-flex">
+                    <img :src="functions.getImage(`../assets/img/homepages-mega-menu-image-alt.jpg`)" alt="megamenu">
+                </div>
             </div>
             
             <ul class="mb-drop-down position-absolute" v-else>
@@ -85,7 +91,10 @@ export default {
           position: relative;
           &:hover{
             .mb-drop-down{
-              display: block;
+              top: 52px;
+              opacity: 1;
+              z-index: 1;
+              visibility: visible;
             }
           }
           .main-link{
@@ -98,9 +107,56 @@ export default {
           }          
          }
           .mb-drop-down{
-            top: 15px;
+            top: 67px;
             left: 0;
-            display: none;
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            background-color: white;
+            width: 250px;
+            border-bottom: 5px solid $secondary-text-color;
+            transition: all 0.5s ease;
+            padding-bottom: 10px;
+            li{
+                padding: 5px;
+                a{
+                  color: $thertiary-text-color;
+                  font-size: 14px;
+                }
+              }
+            &.bigdrop{
+              left: -270px;
+              width: 1100px;
+              height: 400px;
+              li{
+                width: 200px;
+                margin-right: 50px;
+                a{
+                  span{
+                    color: white;
+                    padding: 3px 5px;
+                    margin: 0 5px;
+                    border-radius: 3px;
+                    &.hot{
+                      background-color: red;
+                    }
+                    &.new{
+                      background-color: rgb(1, 109, 1);
+                    }
+                  }
+                }
+              }
+              .image-box{
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 540px;
+                    height: 230px;
+                  }
+              }
+            }
           }
         }
         
@@ -114,8 +170,10 @@ export default {
     }
   }
 
-    .bigdrop{
-      background-color: aqua;
+    //adjustements
+    .mb-row{
+      width: 50%;
+      
     }
  
 
