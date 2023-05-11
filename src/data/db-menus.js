@@ -4,6 +4,7 @@ const headerMenu = [
   {
     title: "Home",
     href: "#",
+    isBig: true,
     sublinks:  [
       {
         title: "MaxCoach Education",

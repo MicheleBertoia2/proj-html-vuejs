@@ -43,6 +43,7 @@ export default {
 @use "../scss/vars" as *;
 
   .mb-jumbo{
+    margin-top: 80px;
     min-height: 500px; 
     letter-spacing: 1px;
     word-spacing: 5px;

@@ -1,7 +1,9 @@
 
 <script>
 import functions from "../data/functions.js";
-import {headerMenu} from "../data/db-menus.js"
+import {headerMenu} from "../data/db-menus.js";
+import {store} from "../data/store";
+
 export default {
   name: "Header",
   data(){
@@ -9,13 +11,17 @@ export default {
       functions,
       headerMenu,
       socialIcons: ["fa-twitter","fa-facebook-f","fa-instagram","fa-linkedin"],
+      store
     }
+  },
+  methods:{
+    
   }
 }
 </script>
 
 <template>
-  <div class="mb-header">
+  <header class="mb-header" :class="{scrolled : store.scrollPosition > 130, ready : store.scrollPosition > 50, back : store.scrollPosition < 50}">
     <div class="mb-container h-100">
       <nav class=" d-flex justify-content-between align-items-center h-100">
 
@@ -27,7 +33,15 @@ export default {
             <a :href="link.href" class="main-link" >{{ link.title }}
               <i class="fa-solid fa-chevron-down"></i>
             </a>
-            <ul class="mb-drop-down position-absolute" >
+            <div class="bigdrop mb-drop-down position-absolute" v-if="link.isBig">
+              <ul>
+                <li v-for="(sublink, index) in link.sublinks" :key="index" >
+                  <a :href="sublink.href"> {{ sublink.title }} </a>
+                </li>              
+              </ul>
+            </div>
+            
+            <ul class="mb-drop-down position-absolute" v-else>
               <li v-for="(sublink, index) in link.sublinks" :key="index" >
                 <a :href="sublink.href"> {{ sublink.title }} </a>
               </li>              
@@ -47,15 +61,20 @@ export default {
         </div>
       </nav>
     </div>
-  </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>
 @use "../scss/vars" as *;
-  .mb-header{
+  .mb-header{   
+    position: absolute;
+      top: 0;
+      left: 0; 
     background-color: lighten(#8c89a2,38%);
     background-image: url("../assets/img/background-pattern-wavify.png");
     height: 80px;
+    width: 100%;
+    transition: all 1s ease;
     nav{
       img{
         height: 26px;
@@ -94,8 +113,38 @@ export default {
       }
     }
   }
+
+    .bigdrop{
+      background-color: aqua;
+    }
  
 
     //transition
+    .mb-header.ready{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.1s ease;
+      transform: translateY(-100%);
+    }
+    .mb-header.scrolled{
+      transform: translateY(0);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background-color: white;
+      color: black;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+      transition: all 1s ease;
+    }
+
+    .mb-header.back{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.1s ease;
+      transform: translateY(0);
+    }
    
 </style>
