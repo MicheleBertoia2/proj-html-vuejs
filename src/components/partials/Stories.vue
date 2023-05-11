@@ -13,7 +13,7 @@ export default {
       <div class="row position-relative">
 
         <div class="col-6 text-center">
-          <h5 class="text-uppercase fs-5">real stories</h5>
+          <h4 class="text-uppercase section-title greenify">real stories</h4>
 
           <div class="text-container mx-auto d-flex justify-content-center align-items-center">
             <h2 class="fs-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit velit vitae labore, optio repudiandae voluptate quisquam ex odit, amet, eaque provident beatae obcaecati cum inventore? Enim hic eum quibusdam in.</h2>
@@ -53,9 +53,7 @@ export default {
     background-image: url("../../assets/img/background-pattern-wavify.png");
     .row{
       padding: 100px 0;
-      h5{
-      color: $secondary-text-color;
-      }
+      
     .text-container{
       width: 70%;
       margin: 50px 0 70px 0;

@@ -19,11 +19,11 @@ export default {
 
   <section id="courses">
 
-    <div class="mb-container text-center">
-      <h5 class="text-uppercase">begin your journey at maxcoach</h5>
-      <h2 class="text-capitalize mb-5">latest <span class="greenify">online courses</span></h2>
+    <div class=" text-center pb-5">
+      <h4 class="text-uppercase section-title grayfy fs-5">begin your journey at maxcoach</h4>
+      <h2 class="text-capitalize my-5 ">latest <span class="greenify">online courses</span></h2>
 
-      <div class="row mb-5">
+      <div class="row mb-5 mb-row">
         <CourseCard v-for="(course,index) in courses" :key="index" :course="course" />
         
 
@@ -40,5 +40,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+  h2{
+    font-family: "Roboto", serif;
+    font-size: 3.5rem;
+  }
   
+  //adjustements
+  .mb-row{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .col-4{
+      padding-left: 0;
+      padding-right: 0;      
+    }  
+  }
 </style>

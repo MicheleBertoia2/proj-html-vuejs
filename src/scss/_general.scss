@@ -31,6 +31,11 @@ section:not(:last-child){
   overflow: hidden;
 }
 
+.section-title{
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .mb-button{
   background-color: $secondary-text-color;
   color: white;
@@ -50,4 +55,12 @@ section:not(:last-child){
 
 .greenify{
   color: $secondary-text-color;
+}
+
+.grayfy{
+  color: $thertiary-text-color;
+}
+
+.blufy{
+  color: $primary-text-color;
 }

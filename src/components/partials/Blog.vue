@@ -18,8 +18,7 @@ export default {
 <template>
   <section id="blog">
     <div class="mb-container text-center">
-      <h4>blog updated</h4> 
-      <!-- RICORDARSI DI UNIFICARE GLI STILI DI TUTTI I TITOLI DELLE SECTION -->
+      <h4 class="text-uppercase section-title">blog updated</h4> 
       <h2>Interesting <span class="greenify">articles updated</span> daily</h2>
 
       <div class="row">
