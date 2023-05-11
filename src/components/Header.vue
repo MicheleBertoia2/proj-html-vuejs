@@ -191,6 +191,7 @@ export default {
       top: 0;
       left: 0;
       z-index: 999;
+      background-image: none;
       background-color: white;
       color: black;
       box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
