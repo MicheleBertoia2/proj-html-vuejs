@@ -34,21 +34,15 @@ methods:{
     store.scrollPosition = currentScrollPosition;
   },
   topFunction() {
-    console.log("siii");
-    const wrapper = document.querySelector('.main-wrapper')
-    console.log(wrapper);
-    window.scrollTo(wrapper.scrollHeight,wrapper.scrollHeight)
-  },
-  // scrollToTop() {
-  //   this.$refs.top.scrollTo(0,0)
-  //   console.log("siii");
-  //     }
+    console.log("non va");
+    window.scrollTo(1,1)
+    }
 }
 }
 </script>
 
 <template>
-  <div class="main-wrapper" @scroll="topFunction" ref="top">
+  <div class="main-wrapper" @scroll="scrollHandler">
     <Header />
   
     <Jumbo />

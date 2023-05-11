@@ -33,6 +33,7 @@ export default {
             <a :href="link.href" class="main-link" >{{ link.title }}
               <i class="fa-solid fa-chevron-down"></i>
             </a>
+            <div class="underline"></div>
             <div class="bigdrop mb-drop-down position-absolute d-flex" v-if="link.isBig">
                 <ul class=" h-100 row d-flex flex-column mb-row">
                   <li v-for="(sublink, index) in link.sublinks" :key="index" class="col-6">
@@ -95,6 +96,9 @@ export default {
               opacity: 1;
               z-index: 1;
               visibility: visible;
+            }
+            .underline{
+              width: 100%;
             }
           }
           .main-link{
@@ -205,5 +209,15 @@ export default {
       transition: all 0.1s ease;
       transform: translateY(0);
     }
+
+    .underline{
+      width: 0;
+      
+      height: 1px;
+      background-color: $secondary-text-color;
+      transition: all 0.5s ease;
+    }
+
+    
    
 </style>
