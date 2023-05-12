@@ -66,5 +66,8 @@ methods:{
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    Header{
+      z-index: 999;
+    }
   }
 </style>
